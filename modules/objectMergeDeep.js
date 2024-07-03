@@ -1,4 +1,7 @@
 export default function objectMergeDeep(base = {}, ...objs) {
+  console.log('!!!', base, objs)
+
+  throw new Error('objectMergeDeep is being used!!!')
   for (let i = 0, len = objs.length; i < len; ++i) {
     const obj = objs[i]
 
