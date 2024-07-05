@@ -1,3 +1,33 @@
+# AVOXI Update Steps
+
+## Code changes and build
+``` 
+# fast-loops repo
+git clone https://github.com/AVOXI/fast-loops.git
+cd fast-loops
+git checkout -b SDPMVP-#####
+npm i 
+# Make the desired changes to the library
+npm run build
+git push origin SDPMVP-#####
+# Merge PR after review/approvals
+```
+
+## Ensuring Frontend receives the update next deploy
+1. Ensure desired changes are merged to the master branch
+2. Run `make deps` or `npm i`
+3. Ensure the `package-lock.json` references the new fast-loops commit
+```
+# AVOXI sdp monorepo
+cd sdp-ui-genius-frontend
+cat package-lock.json | grep fast-loops
+# Example return value
+"node_modules/fast-loops": {
+      "resolved": "git+ssh://git@github.com/AVOXI/fast-loops.git#7ca61aed56a3c8ea26bd2136893255e3838474a2",
+      ...etc
+# Merge PR after review/approvals
+```
+
 # Fast Loops
 
 A collection of small, performant & immutable iteration utilities for Arrays and Objects.
