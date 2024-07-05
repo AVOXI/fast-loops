@@ -20,6 +20,8 @@ git push origin SDPMVP-#####
 ```
 # AVOXI sdp monorepo
 cd sdp-ui-genius-frontend
+rm -rf node_modules && rm package-lock.json
+npm i
 cat package-lock.json | grep fast-loops
 # Example return value
 "node_modules/fast-loops": {
