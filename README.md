@@ -22,10 +22,12 @@ git push origin SDPMVP-#####
 cd sdp-ui-genius-frontend
 rm -rf node_modules && rm package-lock.json
 npm i
-cat package-lock.json | grep fast-loops
+npm ls fast-loops
 # Example return value
-"node_modules/fast-loops": {
-      "resolved": "git+ssh://git@github.com/AVOXI/fast-loops.git#7ca61aed56a3c8ea26bd2136893255e3838474a2",
+├─┬ fela@12.2.1
+│ ├── fast-loops@1.1.3 overridden (git+ssh://git@github.com/AVOXI/fast-loops.git#385f0ac02dc1f3959dc1c8b3d6bec755d9c5f287)
+│ └─┬ fela-utils@12.2.1
+│   └── fast-loops@1.1.3 deduped
       ...etc
 # Merge PR after review/approvals
 ```
